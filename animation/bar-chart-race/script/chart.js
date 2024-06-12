@@ -25,13 +25,13 @@ const genRank = (data, n) => {
 
 export const barChartRace = (data, {
   svgId = 'bar-chart-race',
-  n = 12,
-  barSize = 48,
+  n = 15,
+  barSize = 42,
   marginTop = 16,
   marginRight = 6,
   marginBottom = 6,
   marginLeft = 5,
-  width = 1200,
+  width = 400,
   height = marginTop + barSize * n + marginBottom,
   tickFormat = undefined,
   k = 10,
@@ -170,8 +170,7 @@ export const barChartRace = (data, {
     }
   }
 
-  const svg = d3.create('svg')
-    .attr('id', svgId)
+  const svg = d3.select(svgId).append('svg')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [0, 0, width, height]);

@@ -5,25 +5,23 @@ import {
   barChartRace
 } from './chart.js';
 
-const data = await d3.csv('./data/category-brands.csv', d3.autoType);
+const data = await d3.csv('./data/category-ai.csv', d3.autoType);
 
 // console.log(data);
 const play = () => {
   const chart = barChartRace(data, {
     svgId: 'bar-chart-race'
   });
-  d3.select('#bar-chart-race').remove();
-  d3.select('body').append(() => chart);
   chart.play();
 }
 
-const button = d3.select('body').append('div').append('button')
-  .attr('type', 'button').text('Replay');
+//const button = d3.select('body').append('div').append('button')
+//  .attr('type', 'button').text('Replay');
 
 // initial play
 play();
 
 // replay
-button.on('click', () => {
-  play();
-});
+//button.on('click', () => {
+//  play();
+//});
